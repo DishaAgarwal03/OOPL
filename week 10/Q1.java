@@ -1,30 +1,26 @@
 import java.util.*;
 class Q1
 {
-    T swap(T a)
+    public static <T> void swap(ArrayList<T> arr, int i, int j)
     {
-        int t=a[0];
-        a[0]=a[1];
-        a[1]=t;
+        Collections.swap(arr, i, j);
     }
 
-    T display(T a)
+    public static <T> void display(ArrayList<T> arr)
     {
-        for(int i=0; i<a.length; i++)
-            System.out.print(a[i]+" ");
-        System.out.println();
+        System.out.println(arr);
     }
 
     public static void main(String args[]) 
     {
         Scanner sc = new Scanner(System.in);
-        ArrayList<T> arr = new ArrayList<T>();
+        ArrayList<Integer> arr = new ArrayList<Integer>();
         //T[] arr = new T[5]; CANNOT create generic array this way
         System.out.println("Enter 5 numbers: ");
         for(int i=0; i<5; i++)
-            arr[i]=sc.nextInt();
+            arr.add(sc.nextInt());
         display(arr);
-        swap(arr);   
+        swap(arr, 3,4);   
         display(arr);
     }
 }
